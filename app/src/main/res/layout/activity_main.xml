@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+
+        <FrameLayout
+            android:id="@+id/quoteLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="458dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/background"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/paper" />
+
+            <TextView
+                android:id="@+id/quote"
+                android:layout_width="297dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif"
+                android:textColor="#000000"
+                android:textAlignment="center"
+                tools:text="De alguma forma eu sabia que seria amor. Eu não sei, mas acho que a gente olha e pensa: “Quero pra mim”. Mas dá um frio na barriga, um tremor, um medo de depender de alguém, de sofrer, de escolher errado, de lutar por algo que não vale a pena. Porque o coração nem sempre é mocinho, as vezes ele também gosta de pregar peças, sei lá, talvez queira provar que também sabe ser vilão. Foi por isso que corri, tentei fugir, mas quando tem que ser, não adianta, será." />
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:paddingStart="16dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="16dp"
+                android:textStyle="bold|italic"
+                tools:text="Caio Fernando Abreu" />
+        </FrameLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/quoteInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quoteLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/quoteInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/quote" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/hideAuthorSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/hide_author"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quoteInputLayout"
+            app:switchPadding="8dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/authorInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hideAuthorSwitch">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/authorInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/author" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="fill_horizontal"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/authorInputLayout">
+
+            <Button
+                android:id="@+id/backwardButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/backward" />
+
+            <TextView
+                android:id="@+id/backgroundName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text=""
+                android:textAlignment="center"
+                android:textSize="20sp"
+                tools:text="Background Name" />
+
+            <Button
+                android:id="@+id/fowardButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/foward" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
